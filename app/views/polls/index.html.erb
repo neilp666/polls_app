@@ -8,6 +8,7 @@
         <td><%= link_to poll.title %></td>
         <td><%= link_to 'Show', poll %></td>
         <td><%= link_to 'Edit', edit_poll_path(poll) %></td>
+        <td><%= link_to 'Add Question', new_poll_question_path(poll), class: "btn btn-danger" %>
         <td><%= link_to 'Destroy', poll, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
