@@ -14,5 +14,8 @@
 
 	<%= @poll.questions.each do |question| %>
 	<li><%= question.title %></li>
+	<%= @question.possible_answers.each do |possible_answer| %>
+	<li><%= possible_answer.title %></li>
+	<% end %>
 	<% end %>
 

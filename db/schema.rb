@@ -11,13 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141225194642) do
+ActiveRecord::Schema.define(version: 20141226104148) do
 
   create_table "polls", force: true do |t|
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "possible_answers", force: true do |t|
+    t.integer  "question_id"
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "possible_answers", ["question_id"], name: "index_possible_answers_on_question_id"
 
   create_table "questions", force: true do |t|
     t.string   "title"

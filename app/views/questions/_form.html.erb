@@ -17,17 +17,28 @@
     <%= f.text_field :title, class: "form-control" %>
   </div>
 
-  <div class="radio">
-  <% @kind_options.each do |option| %>
-    <label>
-      <%= f.radio_button :kind, option[1] %>
-      <%= option[0] %>
-    </label>
+<div class="form-group">
+    <%= f.label :kind %><br>
+    <% @kind_options.each do |option| %>
+      <label>
+        <%= f.radio_button :kind, option[1] %>
+        <%= option[0] %>
+      </label>
   <% end %>
+  <p>Specify some choices:</p>
+  <%= f.fields_for :possible_answers do |c| %>
+<p>
+  <%= c.text_field :title, placeholder: "Type your choice", class: "form-control" %>
+</p>
+<% end %>
 </div>
 
+
+
+
+
   <div class="actions">
-    <%= f.submit class: "btn btn-primary" %>
+    <%= f.submit 'Save', class: "btn btn-primary" %>
   </div>
 <% end %>
 
